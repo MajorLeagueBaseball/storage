@@ -6,8 +6,8 @@ define(function( require, exports, module ) {
 	var localObjects = {};
 	var sessionObjects = {};
 
-	var localExpirationDates = JSON.parse( localStorage.getItem(namespace+'storageModuleExpirationDates') ) || {};
-	var sessionExpirationDates = JSON.parse( sessionStorage.getItem(namespace+'storageModuleExpirationDates') ) || {};
+	var localExpirationDates = JSON.parse( localStorage.getItem(namespace+'storageModuleExpirationDates') || '{}' );
+	var sessionExpirationDates = JSON.parse( sessionStorage.getItem(namespace+'storageModuleExpirationDates') || '{}' );
 	
 	// turn expiration dates into Dates.
 	for (var key in localExpirationDates) {
